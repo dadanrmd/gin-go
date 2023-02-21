@@ -16,8 +16,8 @@ FROM alpine:3.12
 
 RUN apk add --no-cache tzdata ca-certificates libc6-compat
 
-COPY --from=builder /go/bin/kbrprime-be /
-COPY --from=builder /go/src/kbrprime-be/params/.env /params/.env
+COPY --from=builder /usr/local/go/bin/kbrprime-be /
+COPY --from=builder /usr/local/go/src/kbrprime-be/params/.env /params/.env
 
 ENTRYPOINT ["/go/bin/kbrprime-be"]
 
